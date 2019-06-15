@@ -46,9 +46,8 @@
         :text3="this.questions.text3"
         :anata="this.questions.anata"
       />
-      <Question7 key="question7" v-if="step === 6" />
-      <TwitterShare key="twittershare" v-if="step === 6" :questions="this.questions"
-      />
+      <Question7 key="question7" v-if="step === 6"/>
+      <TwitterShare key="twittershare" v-if="step === 6" :questions="this.questions"/>
     </template>
   </div>
 </template>
@@ -90,8 +89,7 @@ export default {
         text5b: "",
         text6: "",
         text7: 1,
-        text8: "",
-
+        text8: ""
       }
     };
   },
@@ -244,7 +242,7 @@ export default {
     },
     text8List() {
       return ["本日", "来週", "本年度4Q", "時期未定"];
-    },
+    }
   }
 };
 </script>
@@ -263,6 +261,6 @@ export default {
   padding: 0 50px;
 }
 .slide {
-    font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "メイリオ";
+  font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "メイリオ";
 }
 </style>

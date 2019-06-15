@@ -1,5 +1,3 @@
-<!-- src/components/InputQuestion.vue -->
-
 <template>
   <form @submit.prevent="handleSubmit" class="input-question">
     <p class="orangeb">自分売り込みの提案書ができます</p>
@@ -37,9 +35,7 @@
     <button>次へ</button>
   </form>
 </template>
-
 <script>
-
 export default {
   data() {
     return {
@@ -50,8 +46,11 @@ export default {
   },
   methods: {
     handleSubmit() {
-      let dateString = 
-      this.$emit("start", { aite: this.aite, anata: this.anata, naiyo: this.naiyo });
+      let dateString = this.$emit("start", {
+        aite: this.aite,
+        anata: this.anata,
+        naiyo: this.naiyo
+      });
     }
   }
 };
