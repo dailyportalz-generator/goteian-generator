@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <template>
-      <InputQuestion key="start" v-if="step === 0" @start="handleStart"/>
+      <Question1 key="start" v-if="step === 0" @start="handleStart"/>
       <SlidePreviewTitle key="slidetitle" v-if="step >= 1 && step <= 5"/>
       <Slide1
         key="slide1"
@@ -46,15 +46,17 @@
         :text3="this.questions.text3"
         :anata="this.questions.anata"
       />
+      <Question7 key="question7" v-if="step === 6" />
+      <TwitterShare key="twittershare" v-if="step === 6" :questions="this.questions"
+      />
     </template>
-    <Question7 key="question7" v-if="step === 6" />
   </div>
 </template>
 
 <script>
 import moment from "moment";
 import { parse } from "querystring";
-import OyasumiHeader from "./components/OyasumiHeader.vue";
+
 import SlidePreviewTitle from "./components/SlidePreviewTitle.vue";
 import Slide1 from "./components/Slide1.vue";
 import Slide2 from "./components/Slide2.vue";
@@ -62,15 +64,14 @@ import Slide3 from "./components/Slide3.vue";
 import Slide4 from "./components/Slide4.vue";
 import Slide5 from "./components/Slide5.vue";
 import Slide6 from "./components/Slide6.vue";
+import Question1 from "./components/Question1.vue";
 import Question2 from "./components/Question2.vue";
 import Question3 from "./components/Question3.vue";
 import Question4 from "./components/Question4.vue";
 import Question5 from "./components/Question5.vue";
 import Question6 from "./components/Question6.vue";
 import Question7 from "./components/Question7.vue";
-import InputQuestion from "./components/InputQuestion.vue";
-import SelectQuestion from "./components/SelectQuestion.vue";
-import OyasumiResult from "./components/OyasumiResult.vue";
+import TwitterShare from "./components/TwitterShare.vue";
 
 export default {
   name: "app",
@@ -90,15 +91,7 @@ export default {
         text6: "",
         text7: 1,
         text8: "",
-        name: "",
 
-        title: 1,
-        q1: 1,
-        q2: 1,
-        q3: 1,
-        q4: 1,
-        q5: 1,
-        q6: 1
       }
     };
   },
@@ -110,16 +103,14 @@ export default {
     Slide5,
     Slide6,
     SlidePreviewTitle,
+    Question1,
     Question2,
     Question3,
     Question4,
     Question5,
     Question6,
     Question7,
-    // OyasumiHeader,
-    InputQuestion,
-    // SelectQuestion,
-    // OyasumiResult
+    TwitterShare
   },
   mounted() {
     const params = parse(location.search.replace("?", ""));
@@ -254,36 +245,6 @@ export default {
     text8List() {
       return ["本日", "来週", "本年度4Q", "時期未定"];
     },
-    messageList() {
-      return [
-        "では、書き出しはどうしましょうか。",
-        "なるほど、どうやって切り出しますか",
-        "どれくらい休みますか",
-        "言いわけいれておきますか",
-        "仕事はどうしますか",
-        "では、しめのフレーズをどうぞ"
-      ];
-    },
-    choicesList() {
-      return [
-        [
-          "まじめに",
-          "フレンドリーに",
-          "エスプリをきかせて",
-          "病気が辛そうな感じで"
-        ],
-        ["単刀直入に", "低姿勢に", "スイートに", "ものすごい辛そうな感じで"],
-        [
-          "１日",
-          "１日なんだけど、半日って言っておく",
-          "しばらく",
-          "もうわからないぐらい"
-        ],
-        ["自分のせい", "会社のせい", "猫のせい", "宇宙のせい"],
-        ["まじめなところを見せる", "逃げる", "同僚に押し付け", "ひらきなおり"],
-        ["ふつうに", "辛そうに", "ちょっと冗談を交えつつ", "イタリア人みたく"]
-      ];
-    }
   }
 };
 </script>
@@ -300,5 +261,8 @@ export default {
   max-width: 640px;
   font-size: 12px;
   padding: 0 50px;
+}
+.slide {
+    font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "メイリオ";
 }
 </style>

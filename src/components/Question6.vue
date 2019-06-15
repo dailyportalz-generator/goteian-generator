@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped> 
 .orangeb {
   color: #ff6600;
   font-weight: bold;

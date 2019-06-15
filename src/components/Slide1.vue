@@ -4,7 +4,6 @@
     border="0"
     cellpadding="0"
     cellspacing="0"
-    background="http://portal.nifty.com/2010/02/28/b/img/001.gif"
     class="slide"
   >
     <tr>
@@ -62,5 +61,9 @@ table {
 }
 .slide {
     font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "メイリオ";
+}
+
+table {
+  background: url('../assets/001.gif');
 }
 </style>

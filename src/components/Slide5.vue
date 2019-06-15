@@ -4,7 +4,6 @@
     border="0"
     cellpadding="0"
     cellspacing="0"
-    background="http://portal.nifty.com/2010/02/28/b/img/005.gif"
     class="slide"
   >
     <tr>
@@ -51,5 +50,6 @@ export default {
 <style scoped>
 table {
   margin-bottom: 20px;
+  background: url('../assets/005.gif');
 }
 </style>

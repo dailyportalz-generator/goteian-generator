@@ -5,7 +5,6 @@
       border="0"
       cellpadding="0"
       cellspacing="0"
-      background="http://portal.nifty.com/2010/02/28/b/img/006.gif"
       class="slide"
     >
       <tr>
@@ -80,5 +79,6 @@ export default {
 }
 table {
   margin-bottom: 20px;
+  background: url('../assets/006.gif');
 }
 </style>

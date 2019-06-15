@@ -1,13 +1,5 @@
 <template>
-
-  <table
-    width="540"
-    border="0"
-    cellpadding="0"
-    cellspacing="0"
-    background="http://portal.nifty.com/2010/02/28/b/img/002.gif"
-    class="slide"
-  >
+  <table width="540" border="0" cellpadding="0" cellspacing="0" class="slide">
     <tr>
       <td height="250" colspan="3" valign="bottom">
         <p>&nbsp;</p>
@@ -24,7 +16,6 @@
       <td valign="top">&nbsp;</td>
     </tr>
   </table>
-
 </template>
 <script>
 export default {
@@ -37,11 +28,12 @@ export default {
 
 <style scoped>
 .style25 {
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 130%;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 130%;
 }
 table {
   margin-bottom: 30px;
+  background: url("../assets/002.gif");
 }
 </style>
